@@ -17,6 +17,7 @@ const Lab33 = ({navigator}) => {
     c: '',
     d: '',
     y: '',
+    m: '',
   });
 
   const inputCall = (value, type) =>
@@ -26,6 +27,7 @@ const Lab33 = ({navigator}) => {
       c: () => setCoeffs({...coeffs, c: value}),
       d: () => setCoeffs({...coeffs, d: value}),
       y: () => setCoeffs({...coeffs, y: value}),
+      m: () => setCoeffs({...coeffs, m: value}),
     }[type]());
 
   const [result, setResult] = useState('');
@@ -88,6 +90,13 @@ const Lab33 = ({navigator}) => {
             value={coeffs.y}
             onChangeText={text => onChange(text, 'y')}
             placeholder="Введіть y"
+          />
+          <Input
+            minWidth={120}
+            error={errors.m}
+            value={coeffs.m}
+            onChangeText={text => onChange(text, 'm')}
+            placeholder="Введіть m"
           />
         </Row>
         <Btn backgroundColor="#55b2d4" onPress={onPress} textColor="white" title="Обчислити" />

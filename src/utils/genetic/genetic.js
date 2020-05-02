@@ -90,7 +90,7 @@ const getNextGeneration = pairs => {
 };
 
 export const calcGenetic = coeffs => {
-  let optimalPercent = 0;
+  let optimalPercent = coeffs.m;
   setGeneMax(coeffs.y);
   createInitialPopulation();
   for (let iters = 0; iters < MAX_ITERATIONS; iters++) {
